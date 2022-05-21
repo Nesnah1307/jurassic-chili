@@ -12,11 +12,12 @@ const {
 router
     .route('/')
     .get(getAllThought)
+    .post(addThought)
 
 
 router
     .route('/:userId')
-    .post(addThought)
+    
 
 
 router
