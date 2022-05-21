@@ -1,4 +1,4 @@
-const { Schema, Types } = require("mongoose");
+const { Schema, model, Types } = require("mongoose");
 dateFormat = require('../utils/dateFormat');
 
 ReactionSchema = new Schema(
@@ -10,7 +10,6 @@ ReactionSchema = new Schema(
         reactionBody: {
             type: String,
             required: true,
-            trim: true,
             maxLength: 280
         },
         username: {
@@ -37,6 +36,7 @@ ThoughtSchema = new Schema(
         thoughtText: {
             type: String,
             required: true,
+            trim: true,
             minLength: 1,
             maxLength: 280
         },
@@ -47,6 +47,7 @@ ThoughtSchema = new Schema(
         },
         username: {
             type: String,
+            trim: true,
             required: true
         },
         reactions: [ReactionSchema]
