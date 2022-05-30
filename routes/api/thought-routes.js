@@ -12,29 +12,30 @@ const {
 router
     .route('/')
     .get(getAllThought)
-    .post(addThought)
+    
 
 
 router
     .route('/:userId')
-    
+    .post(addThought)
 
 
 router
     .route('/:userId/:thoughtId')
-    .put(addReaction)
     .delete(deleteThought)
-    .put(updateThought)
     
-
+router
+    .route('/:thoughtId/reactions')
+    .post(addReaction)
 
 router
     .route('/:thoughtId')
     .get(getThoughtById)
+    .put(updateThought)
 
 
 router
-    .route('/:userId/:thoughtId/:reactionId')
+    .route('/:thoughtId/reactions/:reactionId')
     .delete(deleteReaction)
 
 
